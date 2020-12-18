@@ -1,0 +1,70 @@
+import 'package:aphive/theme/assets.dart';
+import 'package:aphive/views/bottomsheets/location_selector_bottom_sheet.dart';
+import 'package:aphive/views/global/widgets/drawer.dart';
+import 'package:aphive/views/global/widgets/google_map_widget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class HomePage extends StatefulWidget {
+  static const tag = 'HomePage';
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final double _topButtonSize = 180.0.w;
+  final double topButtonTopMargin = 160.0.h;
+  final double topButtonHorizontalMargin = 80.0.h;
+
+  @override
+  Widget build(BuildContext context) {
+    final _drawerKey = GlobalKey<ScaffoldState>();
+
+    return Scaffold(
+      key: _drawerKey,
+      drawer: AphiveDrawer(),
+      body: Container(
+        color: Colors.grey,
+        child: Stack(
+          children: [
+            /// Google Map Widget
+            // GoogleMapWidget(),
+
+            /// Placeholder Map Image
+            Image.asset(Assets.map),
+
+            /// Menu Button
+            Positioned(
+              left: topButtonHorizontalMargin,
+              top: topButtonTopMargin,
+              child: GestureDetector(
+                onTap: () {
+                  _drawerKey.currentState.openDrawer();
+                },
+                child: Image.asset(
+                  Assets.hamMenu,
+                  height: _topButtonSize,
+                  width: _topButtonSize,
+                ),
+              ),
+            ),
+
+            /// QR Button
+            Positioned(
+              right: topButtonHorizontalMargin,
+              top: topButtonTopMargin,
+              child: Image.asset(
+                Assets.qrCode,
+                height: _topButtonSize,
+                width: _topButtonSize,
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomSheet: LocationSeletorBottomSheet(),
+    );
+  }
+}
