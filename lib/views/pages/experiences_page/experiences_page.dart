@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/size_extension.dart';
 
 class ExperiencesPage extends StatefulWidget {
-  static const tag = 'ExperiencesPage';
-
   @override
   _ExperiencesPageState createState() => _ExperiencesPageState();
 }
@@ -53,7 +51,7 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
                       child: Text(
                         'Experience title',
                         textAlign: TextAlign.center,
-                        style: pageTitleStyle,
+                        style: AppTextStyles.getWhitePageTitleTextStyle(),
                       ),
                     ),
 
@@ -134,14 +132,14 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
                             Text(
                               '£30.00',
                               style: TextStyle(
-                                color: primaryBlue,
+                                color: AppThemeColors.primaryBlue,
                               ),
                             ),
 
                             ///Book Now Buttom
                             MaterialButton(
                               onPressed: () {},
-                              color: primaryBlue,
+                              color: AppThemeColors.primaryBlue,
                               child: Text(
                                 'Book now',
                                 style: TextStyle(
@@ -191,7 +189,7 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
                     child: Text(
                       'Back',
                       style: TextStyle(
-                        color: primaryBlue,
+                        color: AppThemeColors.primaryBlue,
                         fontSize: 50.0.sp,
                         fontWeight: FontWeight.w700,
                       ),

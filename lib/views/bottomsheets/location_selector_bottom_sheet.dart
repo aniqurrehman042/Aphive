@@ -1,3 +1,4 @@
+import 'package:aphive/cubits/home_page_cubit.dart';
 import 'package:aphive/theme/assets.dart';
 import 'package:aphive/theme/theme_colors.dart';
 import 'package:aphive/views/global/styles/text_styles.dart';
@@ -6,8 +7,11 @@ import 'package:aphive/views/global/widgets/filter_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class LocationSeletorBottomSheet extends StatelessWidget {
+class LocationSelectorBottomSheet extends StatelessWidget {
+  HomePageCubit _homePageCubit = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return BottomSheet(
@@ -15,7 +19,7 @@ class LocationSeletorBottomSheet extends StatelessWidget {
       builder: (context) {
         return Container(
           padding: EdgeInsets.all(50.0.w),
-          color: primaryBlue,
+          color: AppThemeColors.primaryBlue,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -59,16 +63,28 @@ class LocationSeletorBottomSheet extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: BorderedImageCard(
-                      text: 'Experiences',
-                      asset: Assets.experiencesWhite,
+                    child: GestureDetector(
+                      onTap: () {
+                        _homePageCubit.setDrawer(false);
+                        Scaffold.of(context).openEndDrawer();
+                      },
+                      child: BorderedImageCard(
+                        text: 'Experiences',
+                        asset: Assets.experiencesWhite,
+                      ),
                     ),
                   ),
                   SizedBox(width: 40.0.w),
                   Expanded(
-                    child: BorderedImageCard(
-                      text: 'Promotions',
-                      asset: Assets.promotionsWhite,
+                    child: GestureDetector(
+                      onTap: () {
+                        _homePageCubit.setDrawer(true);
+                        Scaffold.of(context).openEndDrawer();
+                      },
+                      child: BorderedImageCard(
+                        text: 'Promotions',
+                        asset: Assets.promotionsWhite,
+                      ),
                     ),
                   ),
                   SizedBox(width: 40.0.w),

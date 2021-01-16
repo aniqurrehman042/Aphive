@@ -1,13 +1,13 @@
+import 'package:aphive/routes.dart';
 import 'package:aphive/theme/assets.dart';
 import 'package:aphive/theme/theme_colors.dart';
 import 'package:aphive/views/global/styles/text_styles.dart';
-import 'package:aphive/views/pages/experiences_page/experiences_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/size_extension.dart';
 
 import 'drawer_item_tile.dart';
 
-class AphiveDrawer extends StatelessWidget {
+class AphiveLeftDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -89,7 +89,7 @@ class AphiveDrawer extends StatelessWidget {
               padding:
                   EdgeInsets.symmetric(vertical: 20.0.w, horizontal: 40.0.w),
               decoration: BoxDecoration(
-                color: primaryBlue,
+                color: AppThemeColors.primaryBlue,
                 borderRadius: BorderRadius.circular(3.0),
               ),
               child: Text(
@@ -105,13 +105,14 @@ class AphiveDrawer extends StatelessWidget {
           DrawerItemTile(
             text: 'Experiences',
             asset: Assets.experiencesPurple,
-            targetPageTag: ExperiencesPage.tag,
+            targetPageTag: Routes.offerDetailsPage,
           ),
 
           /// Promotions Tile
           DrawerItemTile(
             text: 'Promotions',
             asset: Assets.promotionsBlue,
+            targetPageTag: Routes.promotionsPage,
           ),
 
           /// Car Parks Tile

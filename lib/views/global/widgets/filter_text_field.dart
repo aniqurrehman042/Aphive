@@ -9,7 +9,7 @@ class FilterTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: semiBlue,
+      color: AppThemeColors.semiBlue,
       padding:
       EdgeInsets.symmetric(vertical: 10.0.w, horizontal: 80.0.w),
       child: Row(

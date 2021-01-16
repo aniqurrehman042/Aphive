@@ -17,4 +17,11 @@ class Assets {
   static const String venue = 'assets/img/venue.png';
   static const String wallet = 'assets/img/wallet.png';
   static const String map = 'assets/img/map.jpg';
+  static const String salad = 'assets/img/salad.jpg';
+  static const String oliveOil = 'assets/img/olive_oil.jpg';
+  static const String icMap = 'assets/img/ic_map.png';
+  static const String checkboxActive = 'assets/img/checkbox_active.png';
+  static const String checkboxInactive = 'assets/img/checkbox_inactive.png';
+  static const String checkboxWhiteActive = 'assets/img/checkbox_white_active.png';
+  static const String checkboxWhiteInactive = 'assets/img/checkbox_white_inactive.png';
 }
